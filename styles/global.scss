@@ -381,9 +381,16 @@ pre.code-box,
       flex-direction: column;
       justify-content: space-between;
 
-      // 43px is the height of the top mobile bar menu
-      height: calc(50vh - var(--spacing-5xl) - 43px);
-      max-height: calc(50vh - var(--spacing-5xl) - 43px);
+      // resetting default height constraints
+      height: auto;
+      max-height: none;
+
+      // creating separate breakpoint  for mobile screens
+      @media (max-width: $breakpoint-tablet) {
+        // ensuring consistent spacing
+        margin-top: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+      }
 
       @media (min-width: $breakpoint-tablet) {
         height: calc(50vh - var(--spacing-5xl));
